@@ -25,7 +25,7 @@ def Rubika():
     time.sleep(.3)
     drive.find_element_by_xpath('/html/body/div/app-root/app-modal-container/div/app-modal-view/div/div/div/app-confirm-custom/div/div[2]/button[2]/span').click()
     time.sleep(2)
-    stop=time.time+61
+    stop=time.time()+61
     with open('./pass.txt','r') as passlist:
         for i in passlist.read().split():
             if stop<=time.time():
