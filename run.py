@@ -35,7 +35,7 @@ def Rubika():
                 print('\n\n         >>>>>>   UPDATE   TIME  <<<<<<\n\n')
 
             print(f'\n\n\n                      TEST CODE {i} ON  +98{Number_CellPhone}')
-            drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').click()
+            #drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').click()
             drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').send_keys(str(i))
             drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').clear()
 Rubika()
