@@ -4,8 +4,9 @@ import time,platform,os
 from pyfiglet import figlet_format as font
 def Rubika():
     REQUIREMENTS=os.system('pip install -r requirements.txt')
-    print(REQUIREMENTS)
-    time.sleep(3)
+    with open('./run.py','w') as writed:
+        new_file_python=writed.replace("REQUIREMENTS=os.system('pip install -r requirements.txt')",'')
+        writed.write(new_file_python)
     def CLEAR():
         Clear_Cls=print(font('GuardIran.org'))
     os_INFO=platform.uname()
@@ -17,7 +18,7 @@ def Rubika():
     print(' [+]  for example 9129871234 ...\n')
     Number_CellPhone = input(' [~] please Enter The number cellphone : > ')
     if ' ' in Number_CellPhone:
-        Number_CellPhone.replace(' ','')
+        Number_CellPhone.replace(' ','').replace('0','').replace('+98','')
     drive=wb.Firefox()
     drive.get('https://web.rubika.ir/#/login')
     time.sleep(2)
