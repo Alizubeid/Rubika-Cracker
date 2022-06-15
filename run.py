@@ -1,3 +1,4 @@
+#Copyright by https://github.com/Alizubeid
 from selenium import webdriver as wb
 import time,platform,os
 from pyfiglet import figlet_format as font
